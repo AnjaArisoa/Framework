@@ -1,4 +1,5 @@
 
+package etu2007.framework.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -6,8 +7,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import etu2007.framework;
+
+
 
 public class FrontServlet extends HttpServlet{
+    HashMap<String,Mapping> mappingsUrl;
+	
+	public HashMap<String, Mapping> getMappingsUrl() {
+		return mappingsUrl;
+	}
+
+	public void setMappingsUrl(HashMap<String, Mapping> mappingsUrl) {
+		this.mappingsUrl = mappingsUrl;
+	}
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException{
         PrintWriter out = resp.getWriter();
         String requete = req.getRequestURI();
